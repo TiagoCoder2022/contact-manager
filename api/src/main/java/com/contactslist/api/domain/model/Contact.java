@@ -2,7 +2,6 @@ package com.contactslist.api.domain.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.aspectj.asm.internal.Relationship;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

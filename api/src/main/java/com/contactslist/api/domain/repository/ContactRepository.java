@@ -2,8 +2,8 @@ package com.contactslist.api.domain.repository;
 
 import com.contactslist.api.domain.model.Contact;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.awt.print.Pageable;
 import java.util.Optional;
 import java.util.UUID;
 
