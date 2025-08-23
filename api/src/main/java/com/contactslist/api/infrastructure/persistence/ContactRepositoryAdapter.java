@@ -14,12 +14,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Component
+@RequiredArgsConstructor
 public class ContactRepositoryAdapter implements ContactRepository {
     private final ContactJpaRepository repo;
-
-    public ContactRepositoryAdapter(ContactJpaRepository repo) {
-        this.repo = repo;
-    }
 
     public Page<Contact> findAllByOwner(UUID ownerId, Pageable p){ return repo.findAllByOwner_Id(ownerId, p); }
     public Optional<Contact> findByIdAndOwner(UUID id, UUID ownerId){ return repo.findByIdAndOwner_Id(id, ownerId); }
