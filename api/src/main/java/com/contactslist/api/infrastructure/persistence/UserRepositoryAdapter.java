@@ -10,12 +10,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Component
+@RequiredArgsConstructor
 public class UserRepositoryAdapter implements UserRepository {
     private final UserJpaRepository repo;
-
-    public UserRepositoryAdapter(UserJpaRepository repo) {
-        this.repo = repo;
-    }
 
     public Optional<User> findByEmailOrUsername(String v){
         return repo.findByEmailOrUsername(v, v);
