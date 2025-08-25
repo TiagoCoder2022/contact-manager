@@ -130,7 +130,7 @@ public class ContactServiceTest {
         ContactResponse response = contactService.update(contactId, updateRequest);
 
         assertEquals("NewName", response.firstName());
-        assertEquals(Relationship.FILHA, response.relationship());
+        assertEquals(Relationship.AMIGO, response.relationship());
         assertEquals(1, response.phones().size());
     }
 
