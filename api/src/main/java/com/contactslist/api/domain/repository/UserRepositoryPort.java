@@ -5,7 +5,7 @@ import com.contactslist.api.domain.model.User;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface UserRepository {
+public interface UserRepositoryPort {
     Optional<User> findByEmailOrUsername(String emailOrUsername);
     boolean existsByEmail(String email);
     boolean existsByUsername(String username);

@@ -7,9 +7,9 @@ import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface ContactRepository {
+public interface ContactRepositoryPort {
     Page<Contact> findAllByOwner(UUID ownerId, Pageable pageable);
     Optional<Contact> findByIdAndOwner(UUID id, UUID ownerId);
-    Contact save(Contact c);
-    void delete(Contact c);
+    Contact save(Contact contact);
+    void delete(Contact contact);
 }
