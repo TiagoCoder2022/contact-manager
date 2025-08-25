@@ -3,15 +3,14 @@ package com.contactslist.api.application.contact;
 import com.contactslist.api.domain.model.Contact;
 import com.contactslist.api.domain.model.Phone;
 import com.contactslist.api.domain.model.User;
-import com.contactslist.api.domain.repository.ContactRepository;
-import com.contactslist.api.domain.repository.UserRepository;
+import com.contactslist.api.domain.repository.ContactRepositoryPort;
+import com.contactslist.api.domain.repository.UserRepositoryPort;
 import com.contactslist.api.interfaces.contact.dto.ContactCreateRequest;
 import com.contactslist.api.interfaces.contact.dto.ContactResponse;
 import com.contactslist.api.interfaces.contact.dto.ContactUpdateRequest;
 import com.contactslist.api.interfaces.contact.dto.PhoneDTO;
 import com.contactslist.api.shared.exceptions.NotFoundException;
 import com.contactslist.api.shared.exceptions.UnauthorizedException;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -26,8 +25,8 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class ContactService {
-    private final ContactRepository contacts;
-    private final UserRepository users;
+    private final ContactRepositoryPort contacts;
+    private final UserRepositoryPort users;
 
     private UUID currentUserId() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

@@ -1,7 +1,7 @@
 package com.contactslist.api.application.auth;
 
 import com.contactslist.api.domain.model.User;
-import com.contactslist.api.domain.repository.UserRepository;
+import com.contactslist.api.domain.repository.UserRepositoryPort;
 import com.contactslist.api.infrastructure.security.JwtService;
 import com.contactslist.api.interfaces.dto.AuthResponse;
 import com.contactslist.api.interfaces.dto.LoginRequest;
@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 public class AuthService {
-    private final UserRepository users;
+    private final UserRepositoryPort users;
     private final PasswordEncoder encoder;
     private final JwtService jwt;
 
@@ -34,13 +34,13 @@ public class AuthService {
     }
 
     public AuthResponse login(LoginRequest req) {
-        var u = users.findByEmailOrUsername(req.usernameOrEmail())
+        var user = users.findByEmailOrUsername(req.usernameOrEmail())
                 .orElseThrow(() -> new UnauthorizedException("Credenciais inválidas"));
 
-        if (!encoder.matches(req.password(), u.getPasswordHash())) {
+        if (!encoder.matches(req.password(), user.getPasswordHash())) {
             throw new UnauthorizedException("Credenciais inválidas");
         }
 
-        return new AuthResponse(jwt.generateToken(u.getId().toString()));
+        return new AuthResponse(jwt.generateToken(user.getId().toString()));
     }
 }
