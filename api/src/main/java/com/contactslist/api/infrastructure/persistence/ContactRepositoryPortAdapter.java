@@ -1,7 +1,7 @@
 package com.contactslist.api.infrastructure.persistence;
 
 import com.contactslist.api.domain.model.Contact;
-import com.contactslist.api.domain.repository.ContactRepository;
+import com.contactslist.api.domain.repository.ContactRepositoryPort;
 
 
 import com.contactslist.api.infrastructure.persistence.jpa.ContactJpaRepository;
@@ -15,11 +15,11 @@ import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
-public class ContactRepositoryAdapter implements ContactRepository {
+public class ContactRepositoryPortAdapter implements ContactRepositoryPort {
     private final ContactJpaRepository repo;
 
-    public Page<Contact> findAllByOwner(UUID ownerId, Pageable p){ return repo.findAllByOwner_Id(ownerId, p); }
+    public Page<Contact> findAllByOwner(UUID ownerId, Pageable pageable){ return repo.findAllByOwner_Id(ownerId, pageable); }
     public Optional<Contact> findByIdAndOwner(UUID id, UUID ownerId){ return repo.findByIdAndOwner_Id(id, ownerId); }
-    public Contact save(Contact c){ return repo.save(c); }
-    public void delete(Contact c){ repo.delete(c); }
+    public Contact save(Contact contact){ return repo.save(contact); }
+    public void delete(Contact contact){ repo.delete(contact); }
 }
