@@ -2,6 +2,7 @@ package com.contactslist.api.application.contact;
 
 
 import com.contactslist.api.domain.model.Relationship;
+import com.contactslist.api.infrastructure.adapter.in.web.ContactController;
 import com.contactslist.api.infrastructure.security.JwtService;
 import com.contactslist.api.interfaces.contact.dto.ContactCreateRequest;
 import com.contactslist.api.interfaces.contact.dto.ContactResponse;

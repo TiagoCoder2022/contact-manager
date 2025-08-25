@@ -1,11 +1,11 @@
-package com.contactslist.api.application.auth;
+package com.contactslist.api.infrastructure.adapter.in.web;
 
+import com.contactslist.api.application.auth.AuthService;
 import com.contactslist.api.interfaces.contact.dto.ApiMessage;
-import com.contactslist.api.interfaces.dto.AuthResponse;
-import com.contactslist.api.interfaces.dto.LoginRequest;
-import com.contactslist.api.interfaces.dto.RegisterRequest;
+import com.contactslist.api.interfaces.auth.dto.AuthResponse;
+import com.contactslist.api.interfaces.auth.dto.LoginRequest;
+import com.contactslist.api.interfaces.auth.dto.RegisterRequest;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

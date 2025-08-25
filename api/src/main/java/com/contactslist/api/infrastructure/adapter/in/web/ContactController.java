@@ -1,5 +1,6 @@
-package com.contactslist.api.application.contact;
+package com.contactslist.api.infrastructure.adapter.in.web;
 
+import com.contactslist.api.application.contact.ContactService;
 import com.contactslist.api.interfaces.contact.dto.ApiMessage;
 import com.contactslist.api.interfaces.contact.dto.ContactCreateRequest;
 import com.contactslist.api.interfaces.contact.dto.ContactResponse;

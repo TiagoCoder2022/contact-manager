@@ -1,10 +1,10 @@
-package com.contactslist.api.infrastructure.persistence;
+package com.contactslist.api.infrastructure.adapter.out.persistence;
 
 import com.contactslist.api.domain.model.Contact;
 import com.contactslist.api.domain.repository.ContactRepositoryPort;
 
 
-import com.contactslist.api.infrastructure.persistence.jpa.ContactJpaRepository;
+import com.contactslist.api.infrastructure.adapter.out.persistence.jpa.ContactJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

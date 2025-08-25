@@ -1,9 +1,9 @@
 package com.contactslist.api.application.auth;
 
 
-import com.contactslist.api.interfaces.dto.AuthResponse;
-import com.contactslist.api.interfaces.dto.LoginRequest;
-import com.contactslist.api.interfaces.dto.RegisterRequest;
+import com.contactslist.api.interfaces.auth.dto.AuthResponse;
+import com.contactslist.api.interfaces.auth.dto.LoginRequest;
+import com.contactslist.api.interfaces.auth.dto.RegisterRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

@@ -1,4 +1,4 @@
-package com.contactslist.api.infrastructure.persistence.jpa;
+package com.contactslist.api.infrastructure.adapter.out.persistence.jpa;
 
 import com.contactslist.api.domain.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

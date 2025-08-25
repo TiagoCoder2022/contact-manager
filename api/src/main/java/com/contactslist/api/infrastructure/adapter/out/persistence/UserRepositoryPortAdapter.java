@@ -1,8 +1,8 @@
-package com.contactslist.api.infrastructure.persistence;
+package com.contactslist.api.infrastructure.adapter.out.persistence;
 
 import com.contactslist.api.domain.model.User;
 import com.contactslist.api.domain.repository.UserRepositoryPort;
-import com.contactslist.api.infrastructure.persistence.jpa.UserJpaRepository;
+import com.contactslist.api.infrastructure.adapter.out.persistence.jpa.UserJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
